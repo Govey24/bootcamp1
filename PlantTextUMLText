@@ -1,0 +1,25 @@
+@startuml
+
+title Directions - Use Case Diagram
+
+actor Customer
+actor FOHStaff
+actor Chef
+actor Deliverer
+
+rectangle System {
+FOHStaff --> (Open Deliveroo for business day)
+Customer --> (Enter details into app)
+Customer --> (Look for nearby restaurants)
+Customer --> (Order food from app)
+Customer --> (Pay for food)
+FOHStaff --> (Receive order via alert)
+Chef --> (Prepare order)
+Chef --> (Alert FOH staff when order ready)
+FOHStaff --> (Pack for delivery)
+Deliverer --> (Collect for delivery)
+Deliverer --> (Deliver order)
+Customer --> (Receive order)
+}
+
+@enduml
