@@ -1,0 +1,18 @@
+@startuml
+
+title "Deliveroo - Sequence Diagram for finding local restaurants"
+
+actor Customer
+
+Customer -> App_UI : request local restaurants with postcode
+App_UI -> App_API : search  restaurants in defined local area
+App_API -> Database : search  restaurants in defined local area
+Database -> App_API : return local restaurants
+App_API -> App_UI : return local restaurants
+App_UI -> Customer: alert with special offer
+Customer -> App_UI : Customer exits or applies special offer
+App_UI -> Customer : return list of local restaurants by default order
+Customer -> App_UI: filter search results by distance
+App_UI -> Database : sort results in order of distance
+Database->Customer : return results in requested order
+@enduml
