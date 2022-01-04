@@ -1,0 +1,20 @@
+@startuml
+
+title Classes - Class Diagram
+
+class ChosenRestaurant {
+string FoodSelected
+string DrinkSelected
+number PriceOfOrder()
+}
+
+class Details {
+PersonalDetails()
+BankDetails()
+}
+
+class Delivery{
+MethodOfDelivery
+Address
+}
+@enduml
