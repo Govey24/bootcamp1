@@ -1,0 +1,47 @@
+@startuml
+
+title Scooter Hire - Use Case Diagram
+
+left to right direction
+
+actor User
+actor Scooter
+actor Maintenance
+
+rectangle userApp {
+usecase "Download app" as UC1
+usecase "Enter details" as UC2
+usecase "Search scooters" as UC3
+usecase "Scan QR code to release scooter" as UC4
+usecase "Return scooter to charging point" as UC5
+usecase "Report scooter as broken if applicable" as UC12
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC12
+
+rectangle scooter {
+usecase "Report fully charged status" as UC9
+usecase "Activate from QR code" as UC10
+usecase "Report low battery" as UC11
+}
+
+Scooter --> UC9
+Scooter --> UC10 
+Scooter --> UC11
+
+rectangle maintenanceApp {
+usecase "Check fix log" as UC6
+usecase "Pick nearest job" as UC7
+usecase "Update fix as completed" as UC8
+}
+
+Maintenance --> UC6
+Maintenance --> UC7
+Maintenance --> UC8
+ 
+@enduml
