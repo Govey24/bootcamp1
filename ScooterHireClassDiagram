@@ -1,0 +1,51 @@
+@startuml
+
+title Scooter Hire Class Diagram
+
+ left to right direction
+ 
+ class User{
++string name
++string email
++string contactNumber
++string location
++string bankDetails
++string paymentMethod
++boolean hasHiredScooter()
+}
+
+class ChargePoint {
++string location
++number scootersAvailable()
++boolean isScooterCharging()
+
+}
+class Scooter {
++string model
++number speedLimit
++number chargePercentage
++boolean isCharged()
++boolean isHired()
++boolean customerIsOver18()
++boolean isWithtin32()
++boolean isOverLimit()
+}
+class HireCompany {
++string contactNumber
++string email
+}
+
+class MaintenanceTeam {
+string name
+string employeeNumber
+}
+
+HireCompany o-- ChargePoint
+ChargePoint o-- Scooter
+HireCompany o-- Scooter
+HireCompany o-- MaintenanceTeam
+HireCompany <-- User
+Scooter -- MaintenanceTeam
+ChargePoint <-- User
+Scooter <-- User
+@enduml
